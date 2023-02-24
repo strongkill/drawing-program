@@ -1,7 +1,6 @@
 package io.wing.assessments.planto.drawingprogram.model;
 
 import jakarta.persistence.*;
-import jakarta.persistence.criteria.CriteriaBuilder;
 import lombok.Data;
 import lombok.ToString;
 
@@ -26,7 +25,10 @@ public class Command {
     public Command() {
 
     }
-
+    public boolean canRedo(){
+        String firstChar = command.substring(0,1).toUpperCase();
+        return "C".equalsIgnoreCase(firstChar) || "L".equalsIgnoreCase(firstChar) || "R".equalsIgnoreCase(firstChar);
+    }
     public boolean canUndo(){
         String firstChar = command.substring(0,1).toUpperCase();
         return "L".equalsIgnoreCase(firstChar) || "R".equalsIgnoreCase(firstChar);

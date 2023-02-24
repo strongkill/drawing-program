@@ -4,15 +4,20 @@ package io.wing.assessments.planto.drawingprogram.service;
 import io.wing.assessments.planto.drawingprogram.dao.CommandDao;
 import io.wing.assessments.planto.drawingprogram.model.Command;
 import jakarta.annotation.Resource;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class CommandService {
     @Resource
     CommandDao commandDao;
+
+    int currentCommandId=0;
+
+    int lastUndoCommandId = 0;
+
 
     public int getCurrentCommandId() {
         return currentCommandId;
@@ -22,8 +27,6 @@ public class CommandService {
         this.currentCommandId = currentCommandId;
     }
 
-    int currentCommandId=0;
-
     public int getLastUndoCommandId() {
         return lastUndoCommandId;
     }
@@ -32,7 +35,6 @@ public class CommandService {
         this.lastUndoCommandId = lastUndoCommandId;
     }
 
-    int lastUndoCommandId = 0;
 
     public void saveCommand(Command cmd){
         commandDao.save(cmd);
@@ -59,5 +61,17 @@ public class CommandService {
 
     public Command getCommand(Integer id){
         return commandDao.findById(id).get();
+    }
+
+    public List<Command> getCommandsBefore(Integer id){
+        List<Command> cmds = new ArrayList<>();
+        for(Command cmd : getAllCommand()){
+            if(cmd.getId()<id){
+                if(cmd.canRedo()) {
+                    cmds.add(cmd);
+                }
+            }
+        }
+        return cmds;
     }
 }

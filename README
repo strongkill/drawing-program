@@ -2,7 +2,7 @@
 
 ## Read Me First
 
-Warning: the fonts "Times" and "Lucida Bright" are not available for the Java logical font "Serif", which may have unexpected appearance or behavior. Re-enable the "Times" font to remove this warning.
+If you got Warning: the fonts "Times" and "Lucida Bright" are not available for the Java logical font "Serif", which may have unexpected appearance or behavior. Re-enable the "Times" font to remove this warning.
 
 The "Times" font is not available in macOS 12 Monterey. You can find it online and install it.
 

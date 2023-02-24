@@ -3,7 +3,6 @@ package io.wing.assessments.planto.drawingprogram.service;
 import io.wing.assessments.planto.drawingprogram.dao.CanvasDao;
 import io.wing.assessments.planto.drawingprogram.model.Canvas;
 import jakarta.annotation.Resource;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;

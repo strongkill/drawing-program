@@ -5,14 +5,9 @@ import io.wing.assessments.planto.drawingprogram.canvas.shape.CharBox;
 import io.wing.assessments.planto.drawingprogram.canvas.shape.CharLine;
 import io.wing.assessments.planto.drawingprogram.canvas.shape.CharRectangle;
 import io.wing.assessments.planto.drawingprogram.canvas.shape.ShapeFactory;
-import io.wing.assessments.planto.drawingprogram.dao.CommandDao;
 import io.wing.assessments.planto.drawingprogram.entity.*;
 import io.wing.assessments.planto.drawingprogram.model.Command;
 import io.wing.assessments.planto.drawingprogram.service.CommandService;
-import jakarta.annotation.Resource;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 
 import javax.swing.*;
 import java.util.*;
@@ -29,6 +24,8 @@ public class CanvasExercise {
     private final Map<String, Consumer<String>> shapeMapping;
     private int currentWidth;
     private int currentHeight;
+
+    boolean persistFlag = true;
 
     public CanvasExercise(){
         currentWidth = 0;
@@ -92,8 +89,13 @@ public class CanvasExercise {
     private void showHistoryCommand(String command){
         ShowHistoryCommand showHistoryCommand = new ShowHistoryCommand(command);
         if(showHistoryCommand.valid()){
-            for (Command cmd:commandService.getAllCommand()) {
-                System.out.println(cmd.getId() + " -> "+ cmd.getCommand());
+            Iterable<Command> historyCommand = commandService.getAllCommand();
+            if(historyCommand!=null && historyCommand.iterator().hasNext()){
+                for (Command cmd:commandService.getAllCommand()) {
+                    System.out.println(cmd.getId() + " -> "+ cmd.getCommand());
+                }
+            }else{
+                System.out.println("Command history not found.");
             }
         }else{
             BaseCommander.err(command);
@@ -101,14 +103,21 @@ public class CanvasExercise {
     }
 
     private void undoLastDraw(String command){
-
         UndoLastCommand undoCommand = new UndoLastCommand(command);
         if( undoCommand.valid()) {
             commandService.saveCommand(new Command(command));
             Command lastCommand = commandService.getLastCommand();
             if (lastCommand != null) {
+                commandService.setLastUndoCommandId(lastCommand.getId());
+                commandService.setCurrentCommandId(0);
                 System.out.println("Undo command : " + lastCommand.getCommand());
-                new UndoLastCommand(lastCommand.getCommand()).excute();
+
+                List<Command> cmds = commandService.getCommandsBefore(lastCommand.getId());
+                persistFlag = false;
+                for(Command cmd : cmds){
+                    executeCommand(cmd.getCommand());
+                }
+                persistFlag = true;
             } else {
                 System.out.println("Error: no available command to Process..");
             }
@@ -122,9 +131,14 @@ public class CanvasExercise {
         if(redoLastUndoCommand.valid()){
             commandService.saveCommand(new Command(command));
             Command lastUndoCommand = commandService.getLastUndoCommand();
+
             if(lastUndoCommand!=null){
+                commandService.setLastUndoCommandId(0);
+                commandService.setCurrentCommandId(lastUndoCommand.getId());
                 System.out.println("Redo command : " + lastUndoCommand.getCommand());
+                persistFlag = false;
                 executeCommand(lastUndoCommand.getCommand());
+                persistFlag = true;
             }else{
                 System.out.println("Error: no available undo command to Process..");
             }
@@ -143,7 +157,8 @@ public class CanvasExercise {
     private void drawCanvas(String command) {
         if (validCommand(() -> CommandParser.validateCanvas(command))) {
             runLater(() -> {
-                commandService.saveCommand(new Command(command));
+                if(persistFlag)
+                    commandService.saveCommand(new Command(command));
                 initialiseCanvas(command);
                 CharBox box = ShapeFactory.createBox(currentWidth + 1, currentHeight + 1);
                 canvasComponent.updateCanvas(box);
@@ -162,7 +177,8 @@ public class CanvasExercise {
 
     private void drawLine(String command) {
         if (canvasExists() && validCommand(() -> CommandParser.validateLine(command, currentWidth, currentHeight))) {
-            commandService.saveCommand(new Command(command));
+            if(persistFlag)
+                commandService.saveCommand(new Command(command));
             CharLine charLine = ShapeFactory.createLine(command);
             runLater(() -> canvasComponent.updateCanvas(charLine));
         }
@@ -170,7 +186,8 @@ public class CanvasExercise {
 
     private void drawRectangle(String command) {
         if (canvasExists() && validCommand(() -> CommandParser.validateRectangle(command, currentWidth, currentHeight))) {
-            commandService.saveCommand(new Command(command));
+            if(persistFlag)
+                commandService.saveCommand(new Command(command));
             CharRectangle recPainter = ShapeFactory.createRectangle(command);
             runLater(() -> canvasComponent.updateCanvas(recPainter));
         }
