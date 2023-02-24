@@ -13,7 +13,7 @@ Restart the java application.
 ## Getting Started
 mvn clean compile package -Pprod -Dmaven.test.skip=true
 
-java -jar drawing-program-0.0.1-SNAPSHOT.jar
+java -jar target/drawing-program-0.0.1-SNAPSHOT.jar
 
 ### Reference Documentation
 H2 Console
