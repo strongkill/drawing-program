@@ -22,6 +22,8 @@ public class Command {
     @Column
     Integer delFlag = 0;
 
+    boolean persistFlag = true;
+
     public Command() {
 
     }

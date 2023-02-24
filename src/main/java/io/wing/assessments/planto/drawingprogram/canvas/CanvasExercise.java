@@ -117,6 +117,11 @@ public class CanvasExercise {
                 for(Command cmd : cmds){
                     executeCommand(cmd.getCommand());
                 }
+                try {
+                    Thread.sleep(200);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
                 persistFlag = true;
             } else {
                 System.out.println("Error: no available command to Process..");
@@ -157,8 +162,9 @@ public class CanvasExercise {
     private void drawCanvas(String command) {
         if (validCommand(() -> CommandParser.validateCanvas(command))) {
             runLater(() -> {
-                if(persistFlag)
+                if(persistFlag){
                     commandService.saveCommand(new Command(command));
+                }
                 initialiseCanvas(command);
                 CharBox box = ShapeFactory.createBox(currentWidth + 1, currentHeight + 1);
                 canvasComponent.updateCanvas(box);
@@ -177,8 +183,10 @@ public class CanvasExercise {
 
     private void drawLine(String command) {
         if (canvasExists() && validCommand(() -> CommandParser.validateLine(command, currentWidth, currentHeight))) {
-            if(persistFlag)
+            if(persistFlag) {
+
                 commandService.saveCommand(new Command(command));
+            }
             CharLine charLine = ShapeFactory.createLine(command);
             runLater(() -> canvasComponent.updateCanvas(charLine));
         }
@@ -186,8 +194,9 @@ public class CanvasExercise {
 
     private void drawRectangle(String command) {
         if (canvasExists() && validCommand(() -> CommandParser.validateRectangle(command, currentWidth, currentHeight))) {
-            if(persistFlag)
+            if(persistFlag) {
                 commandService.saveCommand(new Command(command));
+            }
             CharRectangle recPainter = ShapeFactory.createRectangle(command);
             runLater(() -> canvasComponent.updateCanvas(recPainter));
         }
