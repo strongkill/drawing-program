@@ -1,0 +1,41 @@
+# Canvas Paint Exercise
+
+## Read Me First
+
+Warning: the fonts "Times" and "Lucida Bright" are not available for the Java logical font "Serif", which may have unexpected appearance or behavior. Re-enable the "Times" font to remove this warning.
+
+The "Times" font is not available in macOS 12 Monterey. You can find it online and install it.
+
+Goto the res folder and install Times.ttf into font folder
+
+Restart the java application.
+
+## Getting Started
+mvn clean compile package -Pprod -Dmaven.test.skip=true
+
+java -jar drawing-program-0.0.1-SNAPSHOT.jar
+
+### Reference Documentation
+H2 Console
+username: admin
+password: 
+http://localhost:9080/h2/
+
+canvas sources:
+https://github.com/LiljanaLilaj/CanvasPainter
+
+### Guides
+Command                 Description
+C w h           To create a new canvas of width w and height h.
+L x1 y1 x2 y2   To create a new line from (x1,y1) to (x2,y2). Currently only
+horizontal or vertical lines are supported. Horizontal and vertical lines
+will be drawn using the 'x' character.
+R x1 y1 x2 y2   To create a new rectangle, whose upper left corner is (x1,y1) and
+lower right corner is (x2,y2). Horizontal and vertical lines will be drawn
+using the 'x' character.
+Z               To undo the last command.
+X               To redo the last undo command.
+V               To Display command history.
+H               To Display this Help.
+Q               To quit the program.
+
