@@ -1,0 +1,54 @@
+2023-02-24 11:07:34.552 INFO  io.wing.assessments.planto.drawingprogram.DrawingProgramApplication Line:51  - Starting DrawingProgramApplication using Java 18.0.2 with PID 70283 (/Users/wing/IdeaProjects/drawing-program/target/classes started by wing in /Users/wing/IdeaProjects/drawing-program)
+2023-02-24 11:07:34.555 INFO  io.wing.assessments.planto.drawingprogram.DrawingProgramApplication Line:636 - The following 1 profile is active: "dev"
+2023-02-24 11:07:35.797 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Initializing ProtocolHandler ["http-nio-9080"]
+2023-02-24 11:07:35.798 INFO  org.apache.catalina.core.StandardService Line:173 - Starting service [Tomcat]
+2023-02-24 11:07:35.798 INFO  org.apache.catalina.core.StandardEngine Line:173 - Starting Servlet engine: [Apache Tomcat/10.1.5]
+2023-02-24 11:07:35.844 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Line:173 - Initializing Spring embedded WebApplicationContext
+2023-02-24 11:07:35.963 INFO  org.hibernate.jpa.internal.util.LogHelper Line:31  - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-02-24 11:07:35.992 INFO  org.hibernate.Version Line:44  - HHH000412: Hibernate ORM core version 6.1.6.Final
+2023-02-24 11:07:36.174 INFO  com.zaxxer.hikari.HikariDataSource Line:110 - HikariPool-1 - Starting...
+2023-02-24 11:07:36.300 INFO  com.zaxxer.hikari.pool.HikariPool Line:565 - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:drawing-program user=ADMIN
+2023-02-24 11:07:36.302 INFO  com.zaxxer.hikari.HikariDataSource Line:123 - HikariPool-1 - Start completed.
+2023-02-24 11:07:36.327 INFO  SQL dialect Line:66  - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-02-24 11:07:36.823 INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator Line:51  - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-02-24 11:07:37.305 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Starting ProtocolHandler ["http-nio-9080"]
+2023-02-24 11:07:37.333 INFO  io.wing.assessments.planto.drawingprogram.DrawingProgramApplication Line:57  - Started DrawingProgramApplication in 3.337 seconds (process running for 4.098)
+2023-02-24 11:07:37.336 INFO  io.wing.assessments.planto.drawingprogram.DrawingProgramApplication Line:40  - EXECUTING : command line runner
+2023-02-24 11:08:01.823 INFO  com.zaxxer.hikari.HikariDataSource Line:350 - HikariPool-1 - Shutdown initiated...
+2023-02-24 11:08:01.953 INFO  com.zaxxer.hikari.HikariDataSource Line:352 - HikariPool-1 - Shutdown completed.
+2023-02-24 11:57:03.553 INFO  io.wing.assessments.planto.drawingprogram.DrawingProgramApplication Line:51  - Starting DrawingProgramApplication using Java 18.0.2 with PID 73611 (/Users/wing/IdeaProjects/drawing-program/target/classes started by wing in /Users/wing/IdeaProjects/drawing-program)
+2023-02-24 11:57:03.554 INFO  io.wing.assessments.planto.drawingprogram.DrawingProgramApplication Line:636 - The following 1 profile is active: "dev"
+2023-02-24 11:57:04.803 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Initializing ProtocolHandler ["http-nio-9080"]
+2023-02-24 11:57:04.804 INFO  org.apache.catalina.core.StandardService Line:173 - Starting service [Tomcat]
+2023-02-24 11:57:04.804 INFO  org.apache.catalina.core.StandardEngine Line:173 - Starting Servlet engine: [Apache Tomcat/10.1.5]
+2023-02-24 11:57:04.848 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Line:173 - Initializing Spring embedded WebApplicationContext
+2023-02-24 11:57:04.966 INFO  org.hibernate.jpa.internal.util.LogHelper Line:31  - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-02-24 11:57:04.993 INFO  org.hibernate.Version Line:44  - HHH000412: Hibernate ORM core version 6.1.6.Final
+2023-02-24 11:57:05.177 INFO  com.zaxxer.hikari.HikariDataSource Line:110 - HikariPool-1 - Starting...
+2023-02-24 11:57:05.305 INFO  com.zaxxer.hikari.pool.HikariPool Line:565 - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:drawing-program user=ADMIN
+2023-02-24 11:57:05.308 INFO  com.zaxxer.hikari.HikariDataSource Line:123 - HikariPool-1 - Start completed.
+2023-02-24 11:57:05.329 INFO  SQL dialect Line:66  - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-02-24 11:57:05.872 INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator Line:51  - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-02-24 11:57:06.366 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Starting ProtocolHandler ["http-nio-9080"]
+2023-02-24 11:57:06.387 INFO  io.wing.assessments.planto.drawingprogram.DrawingProgramApplication Line:57  - Started DrawingProgramApplication in 3.534 seconds (process running for 4.287)
+2023-02-24 11:57:06.390 INFO  io.wing.assessments.planto.drawingprogram.DrawingProgramApplication Line:40  - EXECUTING : command line runner
+2023-02-24 11:57:38.656 INFO  com.zaxxer.hikari.HikariDataSource Line:350 - HikariPool-1 - Shutdown initiated...
+2023-02-24 11:57:38.791 INFO  com.zaxxer.hikari.HikariDataSource Line:352 - HikariPool-1 - Shutdown completed.
+2023-02-24 11:57:44.772 INFO  io.wing.assessments.planto.drawingprogram.DrawingProgramApplication Line:51  - Starting DrawingProgramApplication using Java 18.0.2 with PID 73655 (/Users/wing/IdeaProjects/drawing-program/target/classes started by wing in /Users/wing/IdeaProjects/drawing-program)
+2023-02-24 11:57:44.778 INFO  io.wing.assessments.planto.drawingprogram.DrawingProgramApplication Line:636 - The following 1 profile is active: "dev"
+2023-02-24 11:57:45.990 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Initializing ProtocolHandler ["http-nio-9080"]
+2023-02-24 11:57:45.991 INFO  org.apache.catalina.core.StandardService Line:173 - Starting service [Tomcat]
+2023-02-24 11:57:45.991 INFO  org.apache.catalina.core.StandardEngine Line:173 - Starting Servlet engine: [Apache Tomcat/10.1.5]
+2023-02-24 11:57:46.030 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Line:173 - Initializing Spring embedded WebApplicationContext
+2023-02-24 11:57:46.144 INFO  org.hibernate.jpa.internal.util.LogHelper Line:31  - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-02-24 11:57:46.176 INFO  org.hibernate.Version Line:44  - HHH000412: Hibernate ORM core version 6.1.6.Final
+2023-02-24 11:57:46.346 INFO  com.zaxxer.hikari.HikariDataSource Line:110 - HikariPool-1 - Starting...
+2023-02-24 11:57:46.467 INFO  com.zaxxer.hikari.pool.HikariPool Line:565 - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:drawing-program user=ADMIN
+2023-02-24 11:57:46.470 INFO  com.zaxxer.hikari.HikariDataSource Line:123 - HikariPool-1 - Start completed.
+2023-02-24 11:57:46.488 INFO  SQL dialect Line:66  - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-02-24 11:57:46.964 INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator Line:51  - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-02-24 11:57:47.519 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Starting ProtocolHandler ["http-nio-9080"]
+2023-02-24 11:57:47.543 INFO  io.wing.assessments.planto.drawingprogram.DrawingProgramApplication Line:57  - Started DrawingProgramApplication in 3.345 seconds (process running for 4.053)
+2023-02-24 11:57:47.547 INFO  io.wing.assessments.planto.drawingprogram.DrawingProgramApplication Line:40  - EXECUTING : command line runner
+2023-02-24 12:01:50.599 INFO  com.zaxxer.hikari.HikariDataSource Line:350 - HikariPool-1 - Shutdown initiated...
+2023-02-24 12:01:50.726 INFO  com.zaxxer.hikari.HikariDataSource Line:352 - HikariPool-1 - Shutdown completed.
